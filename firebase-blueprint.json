@@ -1,0 +1,43 @@
+{
+  "$schema": "https://firebase.google.com/schemas/firestore-blueprint.json",
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      },
+      "required": ["id", "name", "email", "role"]
+    },
+    "SavedProperty": {
+      "collection": "saved_properties",
+      "fields": {
+        "userId": { "type": "string" },
+        "propertyId": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["userId", "propertyId"]
+    },
+    "ViewingAppointment": {
+      "collection": "appointments",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "propertyId": { "type": "string" },
+        "propertyTitle": { "type": "string" },
+        "buyerName": { "type": "string" },
+        "agentName": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["id", "userId", "propertyId", "propertyTitle", "buyerName", "agentName", "date", "timeSlot", "status"]
+    }
+  }
+}
